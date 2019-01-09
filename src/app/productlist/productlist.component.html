@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="col-md-12">
+  <div class="form-group">
+    <label for="name">Product Name:</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="product.name">
+  </div>
+  <div class="form-group">
+    <label for="pic">Product Pic:</label>
+    <input type="text" class="form-control" id="pic" [(ngModel)]="product.pic">
+  </div>
+  <div class="form-group">
+    <label for="name">Product Cost:</label>
+    <input type="text" class="form-control" id="cost" [(ngModel)]="product.cost">
+  </div>
+  <div class="form-group">
+
+    <button *ngIf='!btn_stt' (click)="addProduct()" class='btn  btn-success'>Save Product</button>
+    <button *ngIf='btn_stt' (click)="updateProduct()" class='btn  btn-success'>Update Product</button>
+    </div>
+</div>
+
+<div class="col-md-12">
+  <table class="table">
+    <th>Pic</th><th>Name</th><th>Cost</th><th>Action</th>
+<tr *ngFor='let product of products;let i = index;'>
+  <td>
+    <img [src] = 'product.pic' width="100" height='100'>
+  </td>
+  <td>
+    {{ product.name }}
+  </td>
+  <td>
+    {{ product.cost }}
+  </td>
+  <td>
+    <button (click)="delProduct(i)" class='btn btn-danger'>Delete</button>
+
+    <button (click)="editProduct(product)" class='btn  btn-primary'>Edit</button>
+  </td>
+</tr>
+  </table>
+</div>
+</div>

@@ -1,0 +1,23 @@
+<table>
+  <th>Name</th>
+  <th>Area</th>
+  <th>State</th>
+  <th>Mayor</th>
+  <th>Lakes</th>
+  <tr *ngFor = " let x of cities">
+    <td>{{ x.city_name }}</td>
+    <td>{{ x.city_area }}</td>
+    <td>{{ x. city_state }}</td>
+    <td>{{ x.city_mayor }}</td>
+    <td>
+      <ul>
+        <li *ngFor = " let lake of x. city_lakes">
+          {{ lake.name }}
+          {{ lake.area }}
+          {{ lake.pic }}
+          </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
